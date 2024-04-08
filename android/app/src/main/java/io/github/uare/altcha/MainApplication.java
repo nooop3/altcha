@@ -1,4 +1,4 @@
-package com.reactnativeapp;
+package io.github.uare.altcha;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
