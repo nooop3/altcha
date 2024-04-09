@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "rn-nodeify --install --hack",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
@@ -36,6 +37,7 @@
     "react-native-http": "github:tradle/react-native-http#834492d",
     "react-native-level-fs": "^3.0.1",
     "react-native-os": "^1.2.6",
+    "react-native-quick-crypto": "^0.6.1",
     "react-native-randombytes": "^3.6.1",
     "react-native-sha256": "^1.4.10",
     "react-native-svg": "13.4.0",
