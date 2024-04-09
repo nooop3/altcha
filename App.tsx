@@ -15,10 +15,6 @@ import { sha256, sha1 } from 'react-native-sha256';
 import reactNativeCrypto from 'react-native-crypto';
 // import Crypto from 'react-native-quick-crypto';
 import crypto from 'crypto';
-const hashed = crypto.createHash('sha256')
-  .update('Damn, Margelo writes hella good software!')
-  .digest('hex');
-console.log(hashed);
 
 const formatDuration = (ms: number) => {
   if (ms < 0) ms = -ms;

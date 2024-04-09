@@ -101,6 +101,11 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+
+    packagingOptions {
+        // Should prevent clashes with other libraries that use OpenSSL
+        pickFirst '**/libcrypto.so'
+    }
 }
 
 dependencies {
