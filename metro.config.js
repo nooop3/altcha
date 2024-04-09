@@ -6,13 +6,6 @@ const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
  *
  * @type {import('metro-config').MetroConfig}
  */
-const config = {
-    resolver: {
-        extraNodeModules: {
-            stream: require.resolve('readable-stream'),
-            crypto: require.resolve('react-native-quick-crypto'),
-        },
-    }
-};
+const config = {};
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);
