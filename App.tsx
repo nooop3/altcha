@@ -13,6 +13,7 @@ import { config } from "@gluestack-ui/config" // Optional if you want to use def
 
 import { sha256, sha1 } from 'react-native-sha256';
 import crypto from 'react-native-crypto';
+// import QuickCrypto from 'react-native-quick-crypto';
 
 const formatDuration = (ms: number) => {
   if (ms < 0) ms = -ms;
@@ -43,6 +44,8 @@ const hashChallenge = async (salt: string, num: number, algorithm: string, crypt
       }
     case 'react-native-crypto':
       return crypto.createHash(algorithm.replace('-', '')).update(hashString).digest('hex')
+    case 'react-native-quick-crypto':
+      return QuickCrypto.createHash(algorithm.replace('-', '')).update(hashString).digest('hex')
     default:
       throw new Error('Invalid crypto package');
   }
@@ -95,7 +98,7 @@ const UnhandledErrorToast = (toast: any, error: Error) => {
 };
 
 const AltChallenge = () => {
-  const cryptoPackages = ['react-native-sha256', 'react-native-crypto'];
+  const cryptoPackages = ['react-native-sha256', 'react-native-crypto', 'react-native-quick-crypto'];
   const [cryptoPackageSelected, setCryptoPackageSelected] = useState(cryptoPackages[0]);
 
   // algorithms
